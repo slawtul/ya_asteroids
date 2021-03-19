@@ -1,7 +1,7 @@
 #include "spaceship_b.h"
 
-spaceship_b::spaceship_b(SDL_Renderer *renderer, SDL_Rect rect, texture_shelf *ts, obj_meta meta, obj_motion motion)
-        : renderer{renderer}, rect{rect}, ts{ts}, meta{meta}, motion{motion}
+spaceship_b::spaceship_b(SDL_Renderer* renderer, SDL_Rect rect, texture_shelf* ts, obj_meta meta, obj_motion motion)
+    : renderer {renderer}, rect {rect}, ts {ts}, meta {meta}, motion {motion}
 {
 }
 
@@ -26,7 +26,8 @@ void spaceship_b::input()
     {
         motion.acceleration = 0.6;
         motion.max_speed = 8.0;
-    } else
+    }
+    else
     {
         motion.acceleration = 0.2;
         motion.max_speed = 6.0;
@@ -38,7 +39,7 @@ void spaceship_b::physics()
     motion.dx += std::cos(motion.angle * constants::DEG_TO_RAD) * motion.acceleration;
     motion.dy += std::sin(motion.angle * constants::DEG_TO_RAD) * motion.acceleration;
 
-    physics_helpers ph{};
+    physics_helpers ph {};
     if (const double speed = ph.current_speed(motion.dx, motion.dy); speed > motion.max_speed)
     {
         motion.dx *= motion.max_speed / speed;
@@ -51,7 +52,7 @@ void spaceship_b::gfx()
     rect.x += static_cast<int>(motion.dx);
     rect.y += static_cast<int>(motion.dy);
 
-    gfx_helpers gh{};
+    gfx_helpers gh {};
     const auto[x, y] = gh.opposite_edge_position(rect.x, rect.y, rect.w, rect.h, renderer);
 
     rect.x = x;
@@ -60,4 +61,3 @@ void spaceship_b::gfx()
     SDL_RenderCopyEx(renderer, ts->get_texture("CX16-X1.png"), nullptr, &rect, motion.angle + 90, nullptr,
                      SDL_FLIP_NONE);
 }
-

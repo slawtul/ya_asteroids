@@ -7,7 +7,7 @@
 
 struct bullet
 {
-    bullet(SDL_Renderer *renderer, SDL_Rect rect, texture_shelf *ts, obj_meta meta, obj_motion motion);
+    bullet(SDL_Renderer* renderer, SDL_Rect rect, texture_shelf* ts, obj_meta meta, obj_motion motion);
 
     void input();
 
@@ -17,9 +17,9 @@ struct bullet
 
     void update();
 
-    SDL_Renderer *renderer;
+    SDL_Renderer* renderer;
     SDL_Rect rect;
-    texture_shelf *ts;
+    texture_shelf* ts;
     obj_meta meta;
     obj_motion motion;
 };

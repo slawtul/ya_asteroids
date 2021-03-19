@@ -10,7 +10,7 @@ void sdl2_helpers::init(const uint32_t flags)
     }
 }
 
-SDL_Window *sdl2_helpers::create_window(const char *title, int screen_width, int screen_height, uint32_t flags)
+SDL_Window* sdl2_helpers::create_window(const char* title, int screen_width, int screen_height, uint32_t flags)
 {
     const auto window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screen_width,
                                          screen_height, flags);
@@ -22,7 +22,7 @@ SDL_Window *sdl2_helpers::create_window(const char *title, int screen_width, int
     return window;
 }
 
-SDL_Renderer *sdl2_helpers::create_renderer(SDL_Window *window, uint32_t flags)
+SDL_Renderer* sdl2_helpers::create_renderer(SDL_Window* window, uint32_t flags)
 {
     const auto renderer = SDL_CreateRenderer(window, -1, flags);
     if (renderer == nullptr)

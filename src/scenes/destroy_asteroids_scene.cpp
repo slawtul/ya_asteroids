@@ -1,8 +1,8 @@
 #include "shared/game_objects_helpers.h"
 #include "destroy_asteroids_scene.h"
 
-void destroy_asteroids_scene::update(SDL_Event &event, SDL_Renderer *renderer, texture_shelf *ts,
-                                     std::vector<variant_game_obj> &game_objects)
+void destroy_asteroids_scene::update(SDL_Event& event, SDL_Renderer* renderer, texture_shelf* ts,
+                                     std::vector<variant_game_obj>& game_objects)
 {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
@@ -19,23 +19,23 @@ void destroy_asteroids_scene::update(SDL_Event &event, SDL_Renderer *renderer, t
 
     if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_SPACE])
     {
-        bullet_helpers bh{};
+        bullet_helpers bh {};
         auto const rect = bh.rate_rect(spaceship_A.rect);
         auto const motion = bh.rate_motion(spaceship_A.motion);
-        bullet b{renderer, rect, ts, {}, motion};
+        bullet b {renderer, rect, ts, {}, motion};
         game_objects.emplace_back(b);
     }
 
     if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_RETURN])
     {
-        bullet_helpers bh{};
+        bullet_helpers bh {};
         auto const rect_b = bh.rate_rect(spaceship_B.rect);
         auto const motion = bh.rate_motion(spaceship_B.motion);
-        bullet b{renderer, rect_b, ts, {}, motion};
+        bullet b {renderer, rect_b, ts, {}, motion};
         game_objects.emplace_back(b);
     }
 
-    game_objects_helpers goh{};
+    game_objects_helpers goh {};
     goh.call_update_on(game_objects);
     goh.remove_not_active(game_objects);
 }

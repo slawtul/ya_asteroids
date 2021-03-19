@@ -4,16 +4,18 @@
 #include "debug_info/graphics_debug.h"
 
 #ifdef DEBUG
+
 #include "debug_info/frames_debug.h"
 #include "debug_info/objects_debug.h"
+
 #endif
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     SDL_LogInfo(0, "Program parameters: argc %d", argc);
     SDL_LogInfo(0, "Program parameters: argv %s", *argv);
 
-    sdl2_helpers sdl2{};
+    sdl2_helpers sdl2 {};
     sdl2.init(SDL_INIT_VIDEO);
     IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG);
     TTF_Init();
@@ -26,30 +28,30 @@ int main(int argc, char *argv[])
     const auto window = sdl2.create_window("YA Asteroids", 1920, 1080, WR | WHDPI);
     const auto renderer = sdl2.create_renderer(window, RA | RVSYNC);
 
-    graphics_debug gd{};
+    graphics_debug gd {};
     gd.log_screen_size(renderer);
 
-    texture_shelf ts{};
+    texture_shelf ts {};
     ts.add_init_images(renderer);
 
     std::vector<variant_game_obj> game_objects;
     game_objects.reserve(1024);
 
-    spaceship_a ship_a{renderer, {0, 100, 64, 64}, &ts, {}, {}};
-    spaceship_b ship_b{renderer, {100, 100, 64, 64}, &ts, {}, {}};
+    spaceship_a ship_a {renderer, {0, 100, 64, 64}, &ts, {}, {}};
+    spaceship_b ship_b {renderer, {100, 100, 64, 64}, &ts, {}, {}};
 
     game_objects.emplace_back(ship_a);
     game_objects.emplace_back(ship_b);
 
     #ifdef DEBUG
     const auto font = TTF_OpenFont("./resources/terminus.ttf", 16);
-    const auto white = SDL_Color{255, 255, 255, 127};
-    frames_debug fd{};
-    objects_debug od{};
+    const auto white = SDL_Color {255, 255, 255, 127};
+    frames_debug fd {};
+    objects_debug od {};
     #endif
 
-    SDL_Event event{};
-    destroy_asteroids_scene scene{};
+    SDL_Event event {};
+    destroy_asteroids_scene scene {};
 
     while (true)
     {

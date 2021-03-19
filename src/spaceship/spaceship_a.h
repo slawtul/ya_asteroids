@@ -11,7 +11,7 @@
 
 struct spaceship_a
 {
-    spaceship_a(SDL_Renderer *renderer, SDL_Rect rect, texture_shelf *ts, obj_meta meta, obj_motion motion);
+    spaceship_a(SDL_Renderer* renderer, SDL_Rect rect, texture_shelf* ts, obj_meta meta, obj_motion motion);
 
     void input();
 
@@ -21,9 +21,9 @@ struct spaceship_a
 
     void update();
 
-    SDL_Renderer *renderer;
+    SDL_Renderer* renderer;
     SDL_Rect rect;
-    texture_shelf *ts;
+    texture_shelf* ts;
     obj_meta meta;
     obj_motion motion;
 };

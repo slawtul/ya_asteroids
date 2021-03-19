@@ -8,18 +8,18 @@
 
 struct texture_shelf
 {
-    std::map<std::string_view, SDL_Texture *> shelf;
+    std::map<std::string_view, SDL_Texture*> shelf;
 
-    SDL_Texture *get_texture(const std::string_view &texture_name);
+    SDL_Texture* get_texture(const std::string_view& texture_name);
 
-    void add_image(SDL_Renderer *renderer, const std::string_view &texture_name, const std::string_view &file);
+    void add_image(SDL_Renderer* renderer, const std::string_view& texture_name, const std::string_view& file);
 
-    void add_init_images(SDL_Renderer *renderer);
+    void add_init_images(SDL_Renderer* renderer);
 
     void destroy_textures();
 
     [[nodiscard]]
-    SDL_Surface *load_image(const std::string_view &file) const;
+    SDL_Surface* load_image(const std::string_view& file) const;
 };
 
 #endif // TEXTURE_SHELF_H

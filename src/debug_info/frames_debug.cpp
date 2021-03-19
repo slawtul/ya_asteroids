@@ -40,23 +40,23 @@ double frames_debug::rate_frames_per_sec()
     return frames_per_sec;
 }
 
-void frames_debug::render_frames_per_sec(TTF_Font *font, SDL_Color color, SDL_Renderer *renderer)
+void frames_debug::render_frames_per_sec(TTF_Font* font, SDL_Color color, SDL_Renderer* renderer)
 {
-    auto rect = SDL_Rect{20, 24, 120, 16};
-    render_text rt{};
+    auto rect = SDL_Rect {20, 24, 120, 16};
+    render_text rt {};
     rt.render(rect, font, color, renderer, "Avg_fps: " + std::to_string(rate_frames_per_sec()));
 }
 
-void frames_debug::render_max_frames(TTF_Font *font, SDL_Color color, SDL_Renderer *renderer)
+void frames_debug::render_max_frames(TTF_Font* font, SDL_Color color, SDL_Renderer* renderer)
 {
-    auto rect = SDL_Rect{20, 40, 120, 16};
-    render_text rt{};
+    auto rect = SDL_Rect {20, 40, 120, 16};
+    render_text rt {};
     rt.render(rect, font, color, renderer, "Max_fps: " + std::to_string(rate_max_frames()));
 }
 
-void frames_debug::render_min_frames(TTF_Font *font, SDL_Color color, SDL_Renderer *renderer)
+void frames_debug::render_min_frames(TTF_Font* font, SDL_Color color, SDL_Renderer* renderer)
 {
-    auto rect = SDL_Rect{20, 56, 120, 16};
-    render_text rt{};
+    auto rect = SDL_Rect {20, 56, 120, 16};
+    render_text rt {};
     rt.render(rect, font, color, renderer, "Min_fps: " + std::to_string(rate_min_frames()));
 }

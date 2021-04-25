@@ -1,8 +1,7 @@
 #include "shared/game_objects_helpers.h"
 #include "destroy_asteroids_scene.h"
 
-void destroy_asteroids_scene::update(SDL_Event& event, SDL_Renderer* renderer, texture_shelf* ts,
-                                     std::vector<variant_game_obj>& game_objects)
+void destroy_asteroids_scene::update(SDL_Event& event, SDL_Renderer* renderer, texture_shelf* ts, std::vector<variant_game_obj>& game_objects)
 {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
@@ -12,8 +11,7 @@ void destroy_asteroids_scene::update(SDL_Event& event, SDL_Renderer* renderer, t
     auto const spaceship_A = std::get<spaceship_a>(game_objects[0]);
     auto const spaceship_B = std::get<spaceship_b>(game_objects[1]);
 
-    if (SDL_HasIntersection(&spaceship_A.rect, &spaceship_B.rect))
-    {
+    if (SDL_HasIntersection(&spaceship_A.rect, &spaceship_B.rect)) {
         SDL_LogInfo(0, "intersection");
     }
 

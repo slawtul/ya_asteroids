@@ -5,8 +5,7 @@ SDL_Texture* texture_shelf::get_texture(const std::string_view& texture_name)
     return shelf[texture_name];
 }
 
-void
-texture_shelf::add_image(SDL_Renderer* renderer, const std::string_view& texture_name, const std::string_view& file)
+void texture_shelf::add_image(SDL_Renderer* renderer, const std::string_view& texture_name, const std::string_view& file)
 {
     auto surface = load_image(file);
     auto texture = SDL_CreateTextureFromSurface(renderer, surface);
@@ -30,8 +29,7 @@ void texture_shelf::add_init_images(SDL_Renderer* renderer)
 
 void texture_shelf::destroy_textures()
 {
-    for (auto const &[texture_name, texture] : shelf)
-    {
+    for (auto const &[texture_name, texture] : shelf) {
         SDL_DestroyTexture(texture);
     }
     SDL_LogInfo(0, "Destroy all textures");

@@ -14,7 +14,7 @@ void bullet::update()
 
 void bullet::input()
 {
-    // fire bullet input is handled in the scene file ('space' or 'enter' key)
+    // Fire bullet input is handled in the scene file ('space' or 'enter' key)
 }
 
 void bullet::physics()
@@ -41,6 +41,5 @@ void bullet::gfx()
         return;
     }
 
-    SDL_RenderCopyEx(renderer, ts->get_texture("bullet_short_single.png"), nullptr, &rect, motion.angle + 90, nullptr,
-                     SDL_FLIP_NONE);
+    SDL_RenderCopyEx(renderer, ts->get_texture("bullet_short_single.png"), nullptr, &rect, motion.angle + 90, nullptr, SDL_FLIP_NONE);
 }

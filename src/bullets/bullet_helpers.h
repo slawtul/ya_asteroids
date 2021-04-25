@@ -5,10 +5,10 @@
 
 struct bullet_helpers
 {
-    // calculates bullet motion from spaceship motion
+    // Calculates bullet motion from spaceship motion
     obj_motion rate_motion(const obj_motion& spaceship_motion);
 
-    // calculates bullet rect from spaceship rect
+    // Calculates bullet rect from spaceship rect
     SDL_Rect rate_rect(const SDL_Rect& spaceship_rect);
 };
 

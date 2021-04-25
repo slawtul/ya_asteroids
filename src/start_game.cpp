@@ -55,8 +55,7 @@ int main(int argc, char* argv[])
 
     while (true)
     {
-        if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_ESCAPE])
-        {
+        if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_ESCAPE]) {
             break;
         }
 

@@ -14,11 +14,8 @@ struct spaceship_a
     spaceship_a(SDL_Renderer* renderer, SDL_Rect rect, texture_shelf* ts, obj_meta meta, obj_motion motion);
 
     void input();
-
     void physics();
-
     void gfx();
-
     void update();
 
     SDL_Renderer* renderer;

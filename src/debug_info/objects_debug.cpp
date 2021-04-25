@@ -2,8 +2,7 @@
 
 uint16_t objects_debug::count_objs()
 {
-    if (objs_on_screen > max_objs_on_screen)
-    {
+    if (objs_on_screen > max_objs_on_screen) {
         max_objs_on_screen = objs_on_screen;
     }
     return max_objs_on_screen;

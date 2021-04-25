@@ -14,16 +14,13 @@ void spaceship_a::update()
 
 void spaceship_a::input()
 {
-    if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_D])
-    {
+    if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_D]) {
         motion.angle += 6.0;
     }
-    if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_A])
-    {
+    if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_A]) {
         motion.angle -= 6.0;
     }
-    if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_W])
-    {
+    if (SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_W]) {
         motion.acceleration = 0.6;
         motion.max_speed = 8.0;
     }
@@ -54,10 +51,8 @@ void spaceship_a::gfx()
 
     gfx_helpers gh {};
     const auto[x, y] = gh.opposite_edge_position(rect.x, rect.y, rect.w, rect.h, renderer);
-
     rect.x = x;
     rect.y = y;
 
-    SDL_RenderCopyEx(renderer, ts->get_texture("WO84-wu-X1.png"), nullptr, &rect, motion.angle + 90, nullptr,
-                     SDL_FLIP_NONE);
+    SDL_RenderCopyEx(renderer, ts->get_texture("WO84-wu-X1.png"), nullptr, &rect, motion.angle + 90, nullptr, SDL_FLIP_NONE);
 }

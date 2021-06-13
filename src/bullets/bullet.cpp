@@ -23,7 +23,7 @@ void bullet::physics()
     motion.dy+=std::sin(motion.angle*constants::DEG_TO_RAD)*motion.acceleration;
 
     physics_helpers ph{};
-    if (const double speed=ph.current_speed(motion.dx,motion.dy);speed>motion.max_speed)
+    if(const double speed=ph.current_speed(motion.dx,motion.dy);speed>motion.max_speed)
     {
         motion.dx*=motion.max_speed/speed;
         motion.dy*=motion.max_speed/speed;
@@ -35,7 +35,7 @@ void bullet::gfx()
     rect.x+=static_cast<int>(motion.dx);
     rect.y+=static_cast<int>(motion.dy);
 
-    if (gfx_helpers gh{};gh.is_off_screen(rect.x,rect.y,renderer))
+    if(gfx_helpers gh{};gh.is_off_screen(rect.x,rect.y,renderer))
     {
         meta.is_active=false;
         return;

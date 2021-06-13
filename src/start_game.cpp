@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
 
     #ifdef DEBUG
     const auto font=TTF_OpenFont("./resources/terminus.ttf",16);
-    const auto white=SDL_Color {255,255,255,127};
+    const auto white=SDL_Color{255,255,255,127};
     frames_debug fd{};
     objects_debug od{};
     #endif
@@ -85,7 +85,7 @@ int main(int argc, char* argv[])
     TTF_CloseFont(font);
     #endif
 
-    // free memory
+    //Free memory
     game_objects.clear();
     ts.destroy_textures();
     SDL_FreeSurface(SDL_GetWindowSurface(window));

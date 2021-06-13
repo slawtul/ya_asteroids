@@ -40,8 +40,8 @@ void spaceship_a::physics()
     physics_helpers ph{};
     if(const double speed=ph.current_speed(motion.dx,motion.dy);speed>motion.max_speed)
     {
-        motion.dx *= motion.max_speed/speed;
-        motion.dy *= motion.max_speed/speed;
+        motion.dx*=motion.max_speed/speed;
+        motion.dy*=motion.max_speed/speed;
     }
 }
 

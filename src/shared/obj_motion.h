@@ -10,4 +10,4 @@ struct obj_motion
     double dy;
 };
 
-#endif // OBJ_MOTION_H
+#endif //OBJ_MOTION_H

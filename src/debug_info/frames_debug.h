@@ -21,9 +21,9 @@ struct frames_debug
     double rate_max_frames();
     double rate_min_frames();
 
-    void render_frames_per_sec(TTF_Font* font,SDL_Color color,SDL_Renderer* renderer);
-    void render_max_frames(TTF_Font* font,SDL_Color color,SDL_Renderer* renderer);
-    void render_min_frames(TTF_Font* font,SDL_Color color,SDL_Renderer* renderer);
+    void render_frames_per_sec(TTF_Font* font, SDL_Color color, SDL_Renderer* renderer);
+    void render_max_frames(TTF_Font* font, SDL_Color color, SDL_Renderer* renderer);
+    void render_min_frames(TTF_Font* font, SDL_Color color, SDL_Renderer* renderer);
 };
 
 #endif // FRAMES_DEBUG_H
